@@ -1,0 +1,55 @@
+.primary-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom:  1px solid #ededed;
+    padding-left: 15px;
+    padding-right: 30px;
+}
+
+.burger-menu-icon {
+    width: 25px;
+    height: 25px;
+    background-image: url('../../../../icons/burger-menu.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: inline-block;
+    border: none;
+}
+
+.cart-icon {
+    width: 30px;
+    height: 30px;
+    background-image: url('../../../../icons/cart.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: inline-block;
+    border: none;
+}
+
+.cart-icon-container{
+    position: relative;
+    cursor: pointer;
+}
+
+.item-count {
+    position: absolute;
+    background-color: #e2231a;
+    color: white;
+    width: 24px;  /* Fixed width */
+    height: 24px; /* Fixed height */
+    line-height: 24px; /* Matches height to center text */
+    text-align: center; /* Center text horizontally */
+    border-radius: 50%; /* Fully round circle */
+    top: -4px;
+    right: -12px;
+}
+
+.primary-header-text {
+    font-size: 24px;
+}

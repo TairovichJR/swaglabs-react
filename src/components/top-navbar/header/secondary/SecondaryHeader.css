@@ -1,0 +1,38 @@
+.secondary-nav{
+    padding: 12px 0;
+    padding-left: 20px;
+    padding-right: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.secondary-header{
+    color: #132322;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.product-filter {
+    width: 221px;
+    border: 1px solid #ededed;
+    padding: 8px 20px;
+    text-align: center;
+    border-radius: 4px;
+
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
+    appearance: none; 
+    background: transparent; 
+    background-image: none; 
+}
+
+.back-to-products {
+    text-decoration: none;
+    padding: 7px 0;
+    color: #18583a;
+}
+
+.back-to-products:hover {
+    color: #3ddc91;
+}

@@ -1,0 +1,13 @@
+.products-container {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 80px;
+}
+
+.products-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 50px;
+    row-gap: 20px;
+}

@@ -1,0 +1,38 @@
+.footer {
+    background-color: #132322;
+    min-height: 140px;
+    margin-top: auto;
+    /* padding-top: 30px; */
+}
+
+.social-links {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    margin-left: 50px;
+    padding-top: 30px;
+}
+
+.social-links div {
+    width: 30px;
+    height: 30px;
+}
+
+.social-twitter {
+    background: url('../../icons/twitter.png') no-repeat;
+}
+
+.social-facebook {
+    background: url('../../icons/facebook.png') no-repeat;
+}
+
+.social-linkedin {
+    background: url('../../icons/linkedin.png') no-repeat;
+}
+
+.footer-copy{
+    color: white;
+    font-size: 14px;
+    margin-left: 50px;
+    margin-top: 20px;
+}
