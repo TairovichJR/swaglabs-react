@@ -2,6 +2,7 @@ import React from 'react';
 import {  Route, Routes } from 'react-router-dom';
 import './App.css';
 import Cart from './components/cart/Cart';
+import CheckoutComplete from './components/checkout/CheckoutComplete';
 import CheckoutStepOne from './components/checkout/CheckoutStepOne';
 import CheckoutStepTwo from './components/checkout/CheckoutStepTwo';
 import ProductDetails from './components/details/ProductDetails';
@@ -24,6 +25,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout-step-one" element={<CheckoutStepOne />} />
         <Route path="/checkout-step-two" element={<CheckoutStepTwo />} />
+        <Route path="/checkout-complete" element={<CheckoutComplete />} />
       </Routes>
       
       <Footer />

@@ -21,6 +21,9 @@ const SecondaryHeader = () => {
           }else if(matchPath({path: "/checkout-step-two"}, location.pathname)){
             return "checkout-two";
           }
+          else if(matchPath({path: "/checkout-complete"}, location.pathname)){
+            return "checkout-complete";
+          }
           else {
             return "Welcome";
           }
@@ -44,6 +47,7 @@ const SecondaryHeader = () => {
             {getText === "cart" && <p className="secondary-header">Your Cart</p>}
             {getText === "checkout-one" && <p className="secondary-header">Checkout: Your Information</p>}
             {getText === "checkout-two" && <p className="secondary-header">Checkout: Overview</p>}
+            {getText === "checkout-complete" && <p className="secondary-header">Checkout: Complete!</p>}
         </div>
     )
 }
