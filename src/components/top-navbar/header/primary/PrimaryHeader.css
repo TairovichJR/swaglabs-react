@@ -19,6 +19,7 @@
     background-repeat: no-repeat;
     display: inline-block;
     border: none;
+    cursor: pointer;
 }
 
 .cart-icon {

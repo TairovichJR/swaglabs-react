@@ -14,6 +14,10 @@ interface ProductsContextProps {
   cartItems: IProduct[];
   addItemToCart: (value: IProduct) => void;
   removeItemFromCart: (id: Number) => void;
+  burgerMenu: Boolean;
+  openBurgerMenu: ()=> void;
+  closeBurgerMenu: ()=> void;
+  resetAppState: () => void;
 }
 
 const ProductsContext = createContext<ProductsContextProps | undefined>(undefined);
@@ -66,6 +70,7 @@ export const ProductsProvider = ({ children }: ProductsProviderProps) => {
   ]);
   const [selected, setSelected] = useState("az");
   const [cartItems, setCartItems] = useState<IProduct[]>([]);
+  const [burgerMenu, setBurgerMenu] = useState(false);
 
   const filtered = useMemo(() => {
 
@@ -134,9 +139,16 @@ export const ProductsProvider = ({ children }: ProductsProviderProps) => {
   const removeItemFromCart = (id: Number) => {
     setCartItems((prev) => prev.filter(item => item.id !== id));
   }
+  
+  const openBurgerMenu = () => setBurgerMenu(true);
+  const closeBurgerMenu = () => setBurgerMenu(false);
+
+  const resetAppState = () => {
+      setCartItems([]);
+  }
 
   return (
-    <ProductsContext.Provider value={{ products, setProducts, filtered, setSelected, addItemToCart, cartItems, removeItemFromCart }}>
+    <ProductsContext.Provider value={{ products, setProducts, filtered, setSelected, addItemToCart, cartItems, removeItemFromCart, burgerMenu, openBurgerMenu, closeBurgerMenu, resetAppState }}>
       {children}
     </ProductsContext.Provider>
   );

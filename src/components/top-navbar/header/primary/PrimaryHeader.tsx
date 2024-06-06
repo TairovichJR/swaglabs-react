@@ -5,11 +5,11 @@ import '../primary/PrimaryHeader.css';
 
 const PrimaryHeader = () => {
 
-    const {cartItems} = useProducts();
+    const {cartItems, openBurgerMenu} = useProducts();
 
     return (
         <div className="primary-header">
-            <span className="burger-menu-icon"></span>
+            <span className="burger-menu-icon" onClick={openBurgerMenu}></span>
             <p className="primary-header-text">Swag Labs</p>
             <Link to={`/cart`}>
                 <div className="cart-icon-container">

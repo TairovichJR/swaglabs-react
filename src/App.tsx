@@ -10,14 +10,19 @@ import Footer from './components/footer/Footer';
 import ProductsList from './components/products-list/ProductsList';
 import Header from './components/top-navbar/header/Header';
 import SecondaryHeader from './components/top-navbar/header/secondary/SecondaryHeader';
+import SideMenu from './components/top-navbar/side-menu/SideMenu';
+import { useProducts } from './context/ProductsContext';
 
 function App() {
 
+  const{burgerMenu} = useProducts();
   return (
     <div className="App">
       <Header> 
         <SecondaryHeader />
       </Header>
+
+      {burgerMenu && <SideMenu />} 
 
       <Routes>
         <Route path="/" element={<ProductsList/>} />
@@ -27,7 +32,7 @@ function App() {
         <Route path="/checkout-step-two" element={<CheckoutStepTwo />} />
         <Route path="/checkout-complete" element={<CheckoutComplete />} />
       </Routes>
-      
+
       <Footer />
     </div>
   );
