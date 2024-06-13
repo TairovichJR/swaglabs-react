@@ -2,6 +2,3 @@
   publish = "build"
   functions = "netlify/functions"
   command = "CI=false npm run build"
-
-[functions]
-  directory = "netlify/functions"
