@@ -9,7 +9,7 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-const backendUrl = process.env.REACT_APP_NETLIFY_BACKEND_URL;
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(() => {
