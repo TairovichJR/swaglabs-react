@@ -19,9 +19,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   const login = async (username: string, password: string) => {
     try {
-        console.log(backendUrl);
       const response = await axios.post(`${backendUrl}/login`, { username, password });
-      console.log('Login response:', response.data);
       localStorage.setItem('token', response.data.token);
       setIsAuthenticated(true);
     } catch (error) {
