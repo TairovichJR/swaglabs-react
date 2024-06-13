@@ -3,5 +3,5 @@
   functions = "netlify/functions"
   command = "CI=false npm run build"
 
-functions]
+[functions]
   directory = "netlify/functions"
