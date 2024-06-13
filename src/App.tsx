@@ -17,6 +17,7 @@ import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './context/ProtectedRoute';
 
 function App() {
+  
   const { burgerMenu } = useProducts();
   const location = useLocation();
 
@@ -25,27 +26,26 @@ function App() {
   return (
     <AuthProvider>
       <div className="App">
-        <Routes>
-          <Route path="/login" element={<Login />} />
-        </Routes>
-
-        {!isLoginPage && (
+      {!isLoginPage && (
           <>
             <Header>
               <SecondaryHeader />
             </Header>
-
             {burgerMenu && <SideMenu />}
+          </>
+        )}
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<ProtectedRoute><ProductsList /></ProtectedRoute>} />
+          <Route path="/product/:id" element={<ProtectedRoute><ProductDetails /></ProtectedRoute>} />
+          <Route path="/cart" element={<ProtectedRoute><Cart /></ProtectedRoute>} />
+          <Route path="/checkout-step-one" element={<ProtectedRoute><CheckoutStepOne /></ProtectedRoute>} />
+          <Route path="/checkout-step-two" element={<ProtectedRoute><CheckoutStepTwo /></ProtectedRoute>} />
+          <Route path="/checkout-complete" element={<ProtectedRoute><CheckoutComplete /></ProtectedRoute>} />
+        </Routes>
 
-            <Routes>
-              <Route path="/" element={<ProtectedRoute><ProductsList /></ProtectedRoute>} />
-              <Route path="/product/:id" element={<ProtectedRoute><ProductDetails /></ProtectedRoute>} />
-              <Route path="/cart" element={<ProtectedRoute><Cart /></ProtectedRoute>} />
-              <Route path="/checkout-step-one" element={<ProtectedRoute><CheckoutStepOne /></ProtectedRoute>} />
-              <Route path="/checkout-step-two" element={<ProtectedRoute><CheckoutStepTwo /></ProtectedRoute>} />
-              <Route path="/checkout-complete" element={<ProtectedRoute><CheckoutComplete /></ProtectedRoute>} />
-            </Routes>
-
+        {!isLoginPage && (
+          <>
             <Footer />
           </>
         )}

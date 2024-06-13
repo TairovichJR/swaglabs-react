@@ -1,6 +1,5 @@
 require('dotenv').config();
 const express = require('express');
-const serverless = require('serverless-http');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const bodyParser = require('body-parser');
@@ -24,19 +23,24 @@ const users = [
 
 router.post('/login', (req, res) => {
   const { username, password } = req.body;
+  console.log('Login attempt:', { username, password });
+
   const user = users.find((user) => user.username === username);
 
   if (!user) {
+    console.log('User not found');
     return res.status(401).json({ message: 'Invalid credentials' });
   }
 
   const passwordIsValid = bcrypt.compareSync(password, user.password);
 
   if (!passwordIsValid) {
+    console.log('Invalid password');
     return res.status(401).json({ message: 'Invalid credentials' });
   }
 
   const token = jwt.sign({ id: user.id }, SECRET_KEY, { expiresIn: 1800 }); // 30 minutes
+  console.log('Login successful:', { token });
 
   res.status(200).json({ token });
 });
@@ -62,6 +66,9 @@ router.get('/protected', verifyToken, (req, res) => {
   res.status(200).json({ message: 'This is a protected route' });
 });
 
-app.use('/.netlify/functions/app', router);
+app.use('/api', router);
 
-module.exports.handler = serverless(app);
+const PORT = process.env.PORT || 5001;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
