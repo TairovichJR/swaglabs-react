@@ -6,7 +6,7 @@ import CartItem from '../cart/CartItem';
 
 const CheckoutStepTwo = () => {
 
-    const {cartItems} = useProducts();
+    const {cartItems, resetAppState} = useProducts();
 
     const totalBeforeTax = cartItems.reduce((a: number, b: IProduct) => a + b.price, 0);
     const totalAfterTax = totalBeforeTax + 3.20;
@@ -38,7 +38,7 @@ const CheckoutStepTwo = () => {
                 <Link to={`/`}>
                     <button className="continue-shopping-btn">Cancel</button>
                 </Link>
-                <Link to={`/checkout-complete`}>
+                <Link to={`/checkout-complete`} onClick={resetAppState}>
                     <button className="checkout-btn">Finish</button>
                 </Link>
             </div>

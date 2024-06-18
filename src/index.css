@@ -1,6 +1,20 @@
-body {
+body, html, #root, .App {
+    height: 100%;
     margin: 0;
+}
+
+body {
     font-family: Roboto, Arial;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+  
+.main-content {
+    flex: 1;
 }
 
 p {

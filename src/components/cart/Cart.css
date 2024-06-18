@@ -113,3 +113,14 @@
     background-color: #3ddc91;
     border: none;
 }
+
+.empty-cart{
+    width: 900px;
+}
+
+.empty-cart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 100px;
+}

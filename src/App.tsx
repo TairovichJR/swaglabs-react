@@ -26,30 +26,35 @@ function App() {
   return (
     <AuthProvider>
       <div className="App">
-      {!isLoginPage && (
-          <>
-            <Header>
-              <SecondaryHeader />
-            </Header>
-            {burgerMenu && <SideMenu />}
-          </>
-        )}
-        <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/" element={<ProtectedRoute><ProductsList /></ProtectedRoute>} />
-          <Route path="/product/:id" element={<ProtectedRoute><ProductDetails /></ProtectedRoute>} />
-          <Route path="/cart" element={<ProtectedRoute><Cart /></ProtectedRoute>} />
-          <Route path="/checkout-step-one" element={<ProtectedRoute><CheckoutStepOne /></ProtectedRoute>} />
-          <Route path="/checkout-step-two" element={<ProtectedRoute><CheckoutStepTwo /></ProtectedRoute>} />
-          <Route path="/checkout-complete" element={<ProtectedRoute><CheckoutComplete /></ProtectedRoute>} />
-        </Routes>
+        
+            {!isLoginPage && (
+                <>
+                  <Header>
+                    <SecondaryHeader />
+                  </Header>
+                  {burgerMenu && <SideMenu />}
+                </>
+              )}
+              <div className="main-content">
+                <Routes>
+                  <Route path="/login" element={<Login />} />
+                  <Route path="/" element={<ProtectedRoute><ProductsList /></ProtectedRoute>} />
+                  <Route path="/product/:id" element={<ProtectedRoute><ProductDetails /></ProtectedRoute>} />
+                  <Route path="/cart" element={<ProtectedRoute><Cart /></ProtectedRoute>} />
+                  <Route path="/checkout-step-one" element={<ProtectedRoute><CheckoutStepOne /></ProtectedRoute>} />
+                  <Route path="/checkout-step-two" element={<ProtectedRoute><CheckoutStepTwo /></ProtectedRoute>} />
+                  <Route path="/checkout-complete" element={<ProtectedRoute><CheckoutComplete /></ProtectedRoute>} />
+                </Routes>
+              </div>
+              
 
-        {!isLoginPage && (
-          <>
-            <Footer />
-          </>
-        )}
-      </div>
+              {!isLoginPage && (
+                <>
+                  <Footer />
+                </>
+              )}
+        </div>
+      
     </AuthProvider>
   );
 }

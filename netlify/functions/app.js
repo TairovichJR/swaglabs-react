@@ -17,8 +17,8 @@ app.use(cors());
 const users = [
   {
     id: 1,
-    username: 'user',
-    password: bcrypt.hashSync('password', 8), // Storing hashed password
+    username: 'admin',
+    password: bcrypt.hashSync('abc123!', 8), // Storing hashed password
   },
 ];
 
